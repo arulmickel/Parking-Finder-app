@@ -52,5 +52,5 @@ It demonstrates real-time geolocation, offline caching, background updates, and 
 ### Setup
 1. Clone this repo:
    ```bash
-   git clone https://github.com/<your-username>/parking-finder-app.git
+   git clone [https://github.com/arulmickel/parking-finder-app.git]
    cd parking-finder-app
