@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Parking Finder</string>
+    <string name="map_content_desc">Map showing your location</string>
+</resources>

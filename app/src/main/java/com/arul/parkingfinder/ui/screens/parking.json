@@ -1,0 +1,4 @@
+[
+  { "id":"1", "name":"Wabash Garage", "lat":41.8827, "lng":-87.6260, "pricePerHour":8.0 },
+  { "id":"2", "name":"West Loop Lot", "lat":41.8820, "lng":-87.6517, "pricePerHour":5.0 }
+]
