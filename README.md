@@ -41,7 +41,7 @@ Find nearby parking with **Google Maps & Play Services Location**, built for **o
 - Android SDK 35
 - A Google Maps API key
 
-  ## Next Steps (Working_on)
+## Next Steps (Working_on)
 - Add GeofencingClient zones for “arriving at lot” nudges(looking for free source)
 - Wire FCM topic per city/lot for availability alerts
 - Add Crashlytics + Analytics event taxonomy
