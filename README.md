@@ -1,27 +1,18 @@
-# Parking Finder App
+# Parking Finder (Android, Kotlin, Compose)
 
-An Android app built with **Kotlin** and **Jetpack Compose** to help users find parking lots near them.  
-It demonstrates real-time geolocation, offline caching, background updates, and accessibility-friendly UI.
+Find nearby parking with **Google Maps & Play Services Location**, built for **offline-first** reliability and **background refresh** on spotty networks. Designed with **MVVM + Coroutines/Flow**, **Room** cache, and **WorkManager** for scheduled updates (retries/backoff). Ready for **geofencing (micro-fencing)** and **FCM alerts**.
+
 
 ---
 
 ## Features Planning
-- **Google Play Services (Maps & Location APIs)**  
-  Shows your current location on Google Maps and nearby parking lots.
-- **Offline Cache with Room**  
-  Saves parking data locally so you can still see results without internet.
-- **Connectivity Aware**  
-  Displays a graceful banner when offline and falls back to cached data.
-- **Background Updates with WorkManager**  
-  Periodically refreshes data with retries/backoff for reliability on weak networks.
-- **Optional Foreground Service**  
-  Tracks location continuously when running.
-- **Retrofit 3 + OkHttp 5**  
-  Consumes REST APIs with retries and logging.
-- **Material 3 + Accessibility (a11y)**  
-  Uses Compose Material3, content descriptions, and proper UI semantics.
-- **UI Testing**  
-  Includes Compose UI tests + Espresso smoke test.
+- 🗺️ Maps & Location: Google Maps + Fused Location Provider (current spot, nearby lots)
+- 📦 Offline-first: Room cache; graceful offline banner; auto-resync when back online
+- 🔄 Background refresh: WorkManager with constraints, retries, and exponential backoff
+- 🧭 (Planning..) Micro-fencing: GeofencingClient enter/exit triggers for lot proximity
+- 🔔 (Working..) Notifications: FCM push for availability/price changes
+- ♿ Accessibility: Material 3 semantics, content descriptions, dark mode ready
+
 
 ---
 
@@ -31,14 +22,15 @@ It demonstrates real-time geolocation, offline caching, background updates, and 
 ---
 
 ## Tech Stack
-- **Language:** Kotlin (JVM 17, Kotlin 2.2.10)  
-- **UI:** Jetpack Compose Material3  
-- **Maps & Location:** Google Maps Compose, Play Services Location  
-- **Database:** Room  
-- **Networking:** Retrofit 3, OkHttp 5, Moshi  
-- **Background Work:** WorkManager  
-- **Architecture:** Repository pattern + Coroutines + Flow  
-- **Testing:** Compose UI, Espresso
+- Language: Kotlin (JDK 17) • Coroutines • Flow
+- UI: Jetpack Compose Material 3
+- Location & Maps: Google Maps Compose, Play Services Location (Fused)
+- Data: Room (cache), DataStore/Prefs (settings)
+- Networking: Retrofit 3, OkHttp 5, Moshi
+- Background work: WorkManager (constraints, backoff)
+- Architecture: MVVM + Repository pattern
+- Testing: Compose UI tests, Espresso smoke tests
+
 
 ---
 
@@ -48,6 +40,13 @@ It demonstrates real-time geolocation, offline caching, background updates, and 
 - [Android Studio Koala+](https://developer.android.com/studio)
 - Android SDK 35
 - A Google Maps API key
+
+  ## Next Steps (Working_on)
+- Add GeofencingClient zones for “arriving at lot” nudges(looking for free source)
+- Wire FCM topic per city/lot for availability alerts
+- Add Crashlytics + Analytics event taxonomy
+- Power optimizations: batching + foreground service only when navigating
+
 
 ### Setup
 1. Clone this repo:
